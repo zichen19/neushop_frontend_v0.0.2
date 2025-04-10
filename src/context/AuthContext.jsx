@@ -19,18 +19,24 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     try {
       const response = await axios.post(
-        'https://db-group5-452710.wl.r.appspot.com/login', // Replace with your login API endpoint
+        'https://db-group5-452710.wl.r.appspot.com/login',
         { username, password }
       );
-
-      const userData = response.data; // Assuming your API returns user data on successful login
+  
+      console.log('Login response data:', response.data);
+  
+      const userData = response.data;
       setUser(userData);
-      localStorage.setItem('user', JSON.stringify(userData)); // Store user in localStorage
+      localStorage.setItem('user', JSON.stringify(userData));
+      
+      return userData.user || userData.user_id; // ✅ this is the fix!
     } catch (error) {
       console.error('Login failed:', error);
-      throw error; // Propagate the error to the component
+      throw error;
     }
   };
+  
+  
 
   const logout = () => {
     setUser(null);

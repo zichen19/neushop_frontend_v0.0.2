@@ -15,6 +15,8 @@ import Profile from './pages/Profile';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 
+
+
 function App() {
   return (
     <AuthProvider>
@@ -27,10 +29,12 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:productId" element={<ProductDetails />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
+                
                 <Route path="/admin-dashboard" element={<AdminDashboard />} />
                 <Route path="/seller-dashboard" element={<SellerDashboard />} />
                 <Route path="/profile" element={<Profile />} />
