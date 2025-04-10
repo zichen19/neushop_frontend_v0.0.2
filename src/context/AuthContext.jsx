@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     try {
       const response = await axios.post(
-        'https://db-group5-452710.wl.r.appspot.com', // Replace with your login API endpoint
+        'https://db-group5-452710.wl.r.appspot.com/login', // Replace with your login API endpoint
         { username, password }
       );
 

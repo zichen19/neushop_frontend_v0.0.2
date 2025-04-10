@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
     setError('');
     try {
-      await axios.post('https://db-group5-452710.wl.r.appspot.com', { username, password, email }); // Replace with your register API endpoint
+      await axios.post('https://db-group5-452710.wl.r.appspot.com/register', { username, password, email }); // Replace with your register API endpoint
       navigate('/login');
     } catch (err) {
       setError('Registration failed. Please try again.');
